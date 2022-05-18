@@ -1,4 +1,4 @@
-name: Luau Benchmarks
+name: Luau Benchmarks (Tag)
 
 on:
   workflow_dispatch:

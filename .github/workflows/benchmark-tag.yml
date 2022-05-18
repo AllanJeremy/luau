@@ -2,16 +2,13 @@ name: Luau Benchmarks (Tag)
 
 on:
   workflow_dispatch:
-    inputs:
-      tag:
-        description: "Tag"
-        required: true
-        type: string
+
 jobs:
   benchmarks-run:
     name: Run ${{ matrix.bench.title }}
     strategy:
       fail-fast: false
+      max-parallel: 1
       matrix:
         os: [ubuntu-latest]
         engine:
@@ -27,12 +24,21 @@ jobs:
               cachegrindTitle: "Performance",
               cachegrindIterCount: 20,
             }
+        tag:
+          - "0.519"
+          - "0.520"
+          - "0.521"
+          - "0.522"
+          - "0.523"
+          - "0.524"
+          - "0.525"
+          - "0.526"
 
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.events.inputs.tag }}
+          ref: ${{ matrix.tag }}
 
       - name: Build Luau
         run: make config=release luau luau-analyze
@@ -76,5 +82,5 @@ jobs:
       - name: Push benchmark results
         run: |
           git add ./dev/bench/data-historical.json
-          git commit -m "Add benchmarks results for ${{ github.event.inputs.tag }}"
+          git commit -m "Add benchmarks results for ${{ matrix.tag }}"
           git push -u origin gh-pages

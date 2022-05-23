@@ -66,6 +66,7 @@ jobs:
           git checkout --track origin/gh-pages
           git pull
           git status
+          git log
 
       #Run `github-action-benchmark` action
       - name: Store ${{ matrix.bench.title }} result

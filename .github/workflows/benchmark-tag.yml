@@ -25,14 +25,16 @@ jobs:
               cachegrindIterCount: 20,
             }
         tag:
-          - "0.519"
-          - "0.520"
-          - "0.521"
-          - "0.522"
-          - "0.523"
-          - "0.524"
-          - "0.525"
-          - "0.526"
+          - "0.500"
+          - "0.501"
+          - "0.502"
+          - "0.503"
+          - "0.504"
+          - "0.505"
+          - "0.506"
+          - "0.507"
+          - "0.508"
+          - "0.509"
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -54,15 +56,25 @@ jobs:
       - name: Run benchmark
         run: python bench/bench.py | tee ${{ matrix.bench.script }}-output.txt
 
+      - name: Navigate to root dir, create gh-pages dir then navigate into it
+        run: cd .. && mkdir gh-pages && cd gh-pages
+
+      - name: Switch to & checkout gh-pages repo
+        uses: actions/checkout@v3
+        with:
+          repository: AllanJeremy/luau-benchmark-results
+          ref: "main"
+
       - name: Checkout gh-pages
         run: |
-          git config user.name github-actions
-          git config user.email github@users.noreply.github.com
           git status
           git fetch --no-tags --depth=1 origin gh-pages
           git checkout --track origin/gh-pages
           git pull
           git status
+
+      - name: Navigate back to luau before checking out original repo
+        run: cd ..
 
       #Run `github-action-benchmark` action
       - name: Store ${{ matrix.bench.title }} result
@@ -70,8 +82,8 @@ jobs:
         with:
           name: ${{ matrix.bench.title }}
           tool: "benchmarkluau"
-          output-file-path: ${{ matrix.bench.script }}-output.txt
-          external-data-json-path: ./dev/bench/data-historical.json
+          output-file-path: ../${{ matrix.bench.script }}-output.txt
+          external-data-json-path: ../gh-pages/dev/bench/data-historical.json
           alert-threshold: 150%
           fail-threshold: 200%
           fail-on-alert: true
@@ -81,6 +93,6 @@ jobs:
 
       - name: Push benchmark results
         run: |
-          git add ./dev/bench/data-historical.json
+          git add ../gh-pages/dev/bench/data-historical.json
           git commit -m "Add benchmarks results for ${{ matrix.tag }}"
-          git push -u origin gh-pages
+          git push -u origin main

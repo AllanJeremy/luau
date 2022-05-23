@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1653305676013,
+  "lastUpdate": 1653305869102,
   "repoUrl": "https://github.com/AllanJeremy/luau",
   "entries": {
     "Luau Benchmarks": [
@@ -927,6 +927,238 @@
             "value": 14.539,
             "unit": "ms",
             "range": "±3.125%",
+            "extra": "luau"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Allan Jeremy",
+            "username": "AllanJeremy",
+            "email": "aj.dev254@gmail.com"
+          },
+          "committer": {
+            "name": "Allan Jeremy",
+            "username": "AllanJeremy",
+            "email": "aj.dev254@gmail.com"
+          },
+          "id": "fde921897d389f00d06a4856327252b56dbaa790",
+          "message": "Debugging WIP",
+          "timestamp": "2022-05-23T11:18:56Z",
+          "url": "https://github.com/AllanJeremy/luau/commit/fde921897d389f00d06a4856327252b56dbaa790"
+        },
+        "date": 1653305869095,
+        "tool": "benchmarkluau",
+        "benches": [
+          {
+            "name": "trig",
+            "value": 29.13,
+            "unit": "ms",
+            "range": "±0.142%",
+            "extra": "luau"
+          },
+          {
+            "name": "chess",
+            "value": 126.008,
+            "unit": "ms",
+            "range": "±0.052%",
+            "extra": "luau"
+          },
+          {
+            "name": "sieve",
+            "value": 194.676,
+            "unit": "ms",
+            "range": "±0.046%",
+            "extra": "luau"
+          },
+          {
+            "name": "life",
+            "value": 95.441,
+            "unit": "ms",
+            "range": "±0.010%",
+            "extra": "luau"
+          },
+          {
+            "name": "base64",
+            "value": 31.014,
+            "unit": "ms",
+            "range": "±0.037%",
+            "extra": "luau"
+          },
+          {
+            "name": "qsort",
+            "value": 86.426,
+            "unit": "ms",
+            "range": "±0.124%",
+            "extra": "luau"
+          },
+          {
+            "name": "sha256",
+            "value": 29.403,
+            "unit": "ms",
+            "range": "±0.485%",
+            "extra": "luau"
+          },
+          {
+            "name": "tictactoe",
+            "value": 179.673,
+            "unit": "ms",
+            "range": "±0.125%",
+            "extra": "luau"
+          },
+          {
+            "name": "qt",
+            "value": 78.977,
+            "unit": "ms",
+            "range": "±0.198%",
+            "extra": "luau"
+          },
+          {
+            "name": "ack",
+            "value": 66.836,
+            "unit": "ms",
+            "range": "±0.065%",
+            "extra": "luau"
+          },
+          {
+            "name": "binary-trees",
+            "value": 36.911,
+            "unit": "ms",
+            "range": "±0.159%",
+            "extra": "luau"
+          },
+          {
+            "name": "heapsort",
+            "value": 27.809,
+            "unit": "ms",
+            "range": "±0.078%",
+            "extra": "luau"
+          },
+          {
+            "name": "fixpoint-fact",
+            "value": 75.341,
+            "unit": "ms",
+            "range": "±0.575%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body",
+            "value": 36.066,
+            "unit": "ms",
+            "range": "±0.167%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuchen-redux",
+            "value": 14.858,
+            "unit": "ms",
+            "range": "±0.144%",
+            "extra": "luau"
+          },
+          {
+            "name": "spectral-norm",
+            "value": 19.821,
+            "unit": "ms",
+            "range": "±0.475%",
+            "extra": "luau"
+          },
+          {
+            "name": "mandel",
+            "value": 90.299,
+            "unit": "ms",
+            "range": "±0.156%",
+            "extra": "luau"
+          },
+          {
+            "name": "queen",
+            "value": 2.245,
+            "unit": "2ms",
+            "range": "±0.231%",
+            "extra": "luau"
+          },
+          {
+            "name": "scimark",
+            "value": 89.367,
+            "unit": "ms",
+            "range": "±0.071%",
+            "extra": "luau"
+          },
+          {
+            "name": "crypto-aes",
+            "value": 18.947,
+            "unit": "ms",
+            "range": "±0.054%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-cordic",
+            "value": 20.086,
+            "unit": "ms",
+            "range": "±0.083%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-spectral-norm",
+            "value": 6.995,
+            "unit": "6ms",
+            "range": "±0.023%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-cube",
+            "value": 10.868,
+            "unit": "ms",
+            "range": "±0.063%",
+            "extra": "luau"
+          },
+          {
+            "name": "access-binary-trees",
+            "value": 6.273,
+            "unit": "6ms",
+            "range": "±0.323%",
+            "extra": "luau"
+          },
+          {
+            "name": "controlflow-recursive",
+            "value": 6.205,
+            "unit": "6ms",
+            "range": "±0.038%",
+            "extra": "luau"
+          },
+          {
+            "name": "n-body-oop",
+            "value": 62.731,
+            "unit": "ms",
+            "range": "±0.079%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-morph",
+            "value": 11.23,
+            "unit": "ms",
+            "range": "±0.449%",
+            "extra": "luau"
+          },
+          {
+            "name": "fannkuch",
+            "value": 29.218,
+            "unit": "ms",
+            "range": "±0.075%",
+            "extra": "luau"
+          },
+          {
+            "name": "math-partial-sums",
+            "value": 6.085,
+            "unit": "6ms",
+            "range": "±0.064%",
+            "extra": "luau"
+          },
+          {
+            "name": "3d-raytrace",
+            "value": 14.778,
+            "unit": "ms",
+            "range": "±0.168%",
             "extra": "luau"
           }
         ]

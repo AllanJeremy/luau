@@ -39,7 +39,7 @@ jobs:
 
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           ref: ${{ matrix.tag }}
 
@@ -59,6 +59,8 @@ jobs:
 
       - name: Checkout gh-pages
         run: |
+          git config user.name github-actions
+          git config user.email github@users.noreply.github.com
           git status
           git fetch --no-tags --depth=1 origin gh-pages
           git checkout --track origin/gh-pages
@@ -78,7 +80,7 @@ jobs:
           fail-on-alert: true
           comment-on-alert: true
           comment-always: true
-          github-token: ${{ secrets.TEST_GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push benchmark results
         run: |

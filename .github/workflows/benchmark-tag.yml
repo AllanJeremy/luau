@@ -35,6 +35,7 @@ jobs:
           - "0.507"
           - "0.508"
           - "0.509"
+          - "0.510"
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -59,12 +60,6 @@ jobs:
       - name: Navigate to root dir, create gh-pages dir then navigate into it
         run: cd .. && mkdir gh-pages && cd gh-pages
 
-      - name: Switch to & checkout gh-pages repo
-        uses: actions/checkout@v3
-        with:
-          repository: AllanJeremy/luau-benchmark-results
-          ref: "main"
-
       - name: Checkout gh-pages
         run: |
           git status
@@ -73,17 +68,14 @@ jobs:
           git pull
           git status
 
-      - name: Navigate back to luau before checking out original repo
-        run: cd ..
-
       #Run `github-action-benchmark` action
       - name: Store ${{ matrix.bench.title }} result
         uses: Roblox/rhysd-github-action-benchmark@v-luau
         with:
           name: ${{ matrix.bench.title }}
           tool: "benchmarkluau"
-          output-file-path: ../${{ matrix.bench.script }}-output.txt
-          external-data-json-path: ../gh-pages/dev/bench/data-historical.json
+          output-file-path: ${{ matrix.bench.script }}-output.txt
+          external-data-json-path: ./dev/bench/data-historical.json
           alert-threshold: 150%
           fail-threshold: 200%
           fail-on-alert: true
@@ -93,6 +85,6 @@ jobs:
 
       - name: Push benchmark results
         run: |
-          git add ../gh-pages/dev/bench/data-historical.json
+          git add ./dev/bench/data-historical.json
           git commit -m "Add benchmarks results for ${{ matrix.tag }}"
-          git push -u origin main
+          git push -u origin gh-pages

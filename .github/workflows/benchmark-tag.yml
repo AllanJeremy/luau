@@ -57,11 +57,10 @@ jobs:
       - name: Run benchmark
         run: python bench/bench.py | tee ${{ matrix.bench.script }}-output.txt
 
-      - name: Navigate to root dir, create gh-pages dir then navigate into it
-        run: cd .. && mkdir gh-pages && cd gh-pages
-
       - name: Checkout gh-pages
         run: |
+          git config user.name github-actions
+          git config user.email github@users.noreply.github.com
           git status
           git fetch --no-tags --depth=1 origin gh-pages
           git checkout --track origin/gh-pages

@@ -55,7 +55,7 @@ jobs:
         run: python bench/bench.py | tee ${{ matrix.bench.script }}-${{ matrix.tag }}-output.txt
 
       - name: List current files
-        run: ls -l
+        run: ls
 
       - name: Checkout gh-pages
         run: |
@@ -72,7 +72,7 @@ jobs:
         with:
           name: ${{ matrix.bench.title }}
           tool: "benchmarkluau"
-          output-file-path: ${{ matrix.bench.script }}-output.txt
+          output-file-path: ${{ matrix.bench.script }}-${{ matrix.tag }}-output.txt
           external-data-json-path: ./dev/bench/data-historical.json
           alert-threshold: 150%
           fail-threshold: 200%

@@ -5,7 +5,7 @@ on:
 
 jobs:
   benchmarks-run:
-    name: Run ${{ matrix.bench.title }}
+    name: Run ${{ matrix.bench.title }} - ${{ matrix.tag}}
     strategy:
       fail-fast: false
       max-parallel: 1

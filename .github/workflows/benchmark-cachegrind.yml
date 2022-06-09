@@ -3,7 +3,7 @@ name: Luau Benchmarks (CacheGrind)
 on:
   push:
     branches:
-      - master
+      - test/self-hosted
     paths-ignore:
       - "docs/**"
       - "papers/**"
@@ -17,9 +17,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest]
-        engine:
-          - { channel: stable, version: latest }
         bench:
           - {
               script: "run-benchmarks",
@@ -31,7 +28,7 @@ jobs:
         benchResultsRepo:
           - { name: "luau-lang/benchmark-data", branch: "main" }
 
-    runs-on: ${{ matrix.os }}
+    runs-on: self-hosted
     steps:
       - name: Checkout Luau
         uses: actions/checkout@v3

@@ -25,6 +25,7 @@ jobs:
         with:
           max_attempts: 3
           retry_on: error
+          timeout_seconds: 5
           command: |
             echo "Running action that fails..."
             exit 1

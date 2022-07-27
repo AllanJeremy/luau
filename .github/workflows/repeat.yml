@@ -20,7 +20,11 @@ jobs:
         with:
           token: "${{ secrets.BENCH_GITHUB_TOKEN }}"
 
-      - name: Run an action that fails
-        run: |
-          echo "Running action that fails..."
-          exit 1
+      - name: Retry Step
+        uses: nick-fields/retry@v2.7.0
+        with:
+          max_attempts: 3
+          retry_on: error
+          command: |
+            echo "Running action that fails..."
+            exit 1

@@ -1,0 +1,26 @@
+name: retry benchmarks
+
+on:
+  push:
+    branches:
+      - feat/repeat-benchmark
+
+jobs:
+  repeat:
+    name: Repeat benchmark
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: "${{ secrets.BENCH_GITHUB_TOKEN }}"
+
+      - name: Run an action that fails
+        run: |
+          echo "Running action that fails..."
+          exit 1

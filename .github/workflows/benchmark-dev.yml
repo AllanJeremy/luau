@@ -83,8 +83,9 @@ jobs:
         if: github.event_name == 'push'
         uses: nick-fields/retry@v2.7.0
         with:
-          max_attempts: 3
+          max_attempts: 5
           retry_on: error
+          retry_wait_seconds: 60
           timeout_minutes: 5
           command: |
             echo "Pushing benchmark results..."
@@ -178,8 +179,9 @@ jobs:
       - name: Push benchmark results
         uses: nick-fields/retry@v2.7.0
         with:
-          max_attempts: 3
+          max_attempts: 5
           retry_on: error
+          retry_wait_seconds: 60
           timeout_minutes: 5
           command: |
             echo "Pushing benchmark results..."
@@ -271,8 +273,9 @@ jobs:
         if: github.event_name == 'push'
         uses: nick-fields/retry@v2.7.0
         with:
-          max_attempts: 3
+          max_attempts: 5
           retry_on: error
+          retry_wait_seconds: 60
           timeout_minutes: 5
           command: |
             echo "Pushing benchmark results..."

@@ -4,5 +4,4 @@ on:
 jobs:
   doing-something:
     name: Something job
-    runs-on: "ubuntu-latest"
     uses: ./.github/workflows/action.yml

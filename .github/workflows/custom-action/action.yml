@@ -1,5 +1,6 @@
 name: "Hello World"
 description: "Greet someone"
+shell: bash
 inputs:
   first_name:
     type: string

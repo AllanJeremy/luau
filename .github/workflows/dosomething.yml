@@ -11,4 +11,4 @@ jobs:
           echo 'Tupo site'
 
       - name: Use the reusable workflow
-        uses: ./.github/workflows/action.yml
+        uses: ./.github/workflows/custom-action

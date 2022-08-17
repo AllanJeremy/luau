@@ -1,10 +1,10 @@
 name: "Hello World"
 description: "Greet someone"
-shell: bash
 inputs:
   first_name:
     type: string
 runs:
   using: "composite"
+  shell: bash
   steps:
     - run: echo Hello ${{ inputs.first_name }}.

@@ -1,0 +1,15 @@
+name: "Checkout and Push results"
+description: "Checkout and push results to GitHub"
+on:
+  workflow_call:
+    inputs:
+      first_name:
+        required: false
+        default: "Anonymous"
+        type: string
+jobs:
+  something:
+    name: Something job
+    runs-on: "ubuntu-latest"
+    steps:
+      - run: echo 'This is a reusable action with first name ${inputs.first_name}'

@@ -1,0 +1,14 @@
+name: "Doing something"
+on:
+  push:
+    branches:
+      - master
+jobs:
+  something:
+    name: Something job
+    runs-on: "ubuntu-latest"
+    steps:
+      - run: echo 'Something is here'
+
+      - name: Use a re-useable workflow
+        uses: AllanJeremy/luau/.github/action.yml@test-reusableworkflow

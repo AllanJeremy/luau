@@ -15,3 +15,5 @@ jobs:
 
       - name: Use the reusable workflow
         uses: ./.github/workflows/custom-action
+        with:
+          first_name: "Allan"

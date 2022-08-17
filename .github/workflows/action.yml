@@ -1,5 +1,4 @@
 name: "Checkout and Push results"
-description: "Checkout and push results to GitHub"
 on:
   workflow_call:
     inputs:

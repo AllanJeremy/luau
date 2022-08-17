@@ -3,6 +3,7 @@ on:
   push:
 jobs:
   doing-something:
+    runs-on: "ubuntu-latest"
     name: Our main job (the caller)
     steps:
       - name: Something happening internally, kwa ground

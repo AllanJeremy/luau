@@ -3,5 +3,11 @@ on:
   push:
 jobs:
   doing-something:
-    name: Something job
-    uses: ./.github/workflows/action.yml
+    name: Our main job (the caller)
+    steps:
+      - name: Something happening internally, kwa ground
+        run: |
+          echo 'Tupo site'
+
+      - name: Use the reusable workflow
+        uses: ./.github/workflows/action.yml

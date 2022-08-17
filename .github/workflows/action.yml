@@ -1,14 +1,9 @@
-name: "Checkout and Push results"
-on:
-  workflow_call:
-    inputs:
-      first_name:
-        required: false
-        default: "Anonymous"
-        type: string
-jobs:
-  reusable-job1:
-    name: Something job
-    runs-on: "ubuntu-latest"
-    steps:
-      - run: echo 'This is a reusable action with first name ${inputs.first_name}'
+name: "Hello World"
+description: "Greet someone"
+inputs:
+  first_name:
+    type: string
+runs:
+  using: "composite"
+  steps:
+    - run: echo Hello ${{ inputs.first_name }}.

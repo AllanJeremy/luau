@@ -6,6 +6,9 @@ jobs:
     runs-on: "ubuntu-latest"
     name: Our main job (the caller)
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Something happening internally, kwa ground
         run: |
           echo 'Tupo site'

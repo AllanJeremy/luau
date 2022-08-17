@@ -1,13 +1,8 @@
 name: "Do something"
 on:
-  workflow_dispatch:
+  push:
 jobs:
   doing-something:
     name: Something job
     runs-on: "ubuntu-latest"
-    uses: AllanJeremy/luau/.github/workflows/action.yml@test-reusable-workflow
-    steps:
-      - run: echo 'Something is here'
-
-      - name: Use a re-useable workflow
-        run: echo 'This is where we should be running the reusable workflow'
+    uses: ./.github/workflows/action.yml@test-reusable-workflow

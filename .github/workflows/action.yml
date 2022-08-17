@@ -8,7 +8,7 @@ on:
         default: "Anonymous"
         type: string
 jobs:
-  something:
+  reusable-job1:
     name: Something job
     runs-on: "ubuntu-latest"
     steps:

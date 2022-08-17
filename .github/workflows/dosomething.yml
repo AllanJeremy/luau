@@ -11,4 +11,4 @@ jobs:
       - run: echo 'Something is here'
 
       - name: Use a re-useable workflow
-        uses: AllanJeremy/luau/.github/action.yml@test-reusableworkflow
+        uses: AllanJeremy/luau/.github/action.yml@test-reusable-workflow

@@ -10,3 +10,4 @@ jobs:
       - run: echo 'Something is here'
 
       - name: Use a re-useable workflow
+        run: echo 'This is where we should be running the reusable workflow'

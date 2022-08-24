@@ -12,8 +12,8 @@ jobs:
 
       - name: Use the reusable workflow
         uses: AllanJeremy/nick-fields-retry@feat/add-retry-action-support
-          with:
-            max_attempts: 3
-            retry_on: error
-            timeout_seconds: 5
-            action: ./.github/workflows/custom-action
+        with:
+          max_attempts: 3
+          retry_on: error
+          timeout_seconds: 5
+          action: ./.github/workflows/custom-action

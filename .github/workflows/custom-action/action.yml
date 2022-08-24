@@ -1,6 +1,5 @@
 name: "Hello World"
 description: "Greet someone"
-inputs:
 runs:
   using: "composite"
   steps:

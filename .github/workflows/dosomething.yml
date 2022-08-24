@@ -10,9 +10,5 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Something happening internally, kwa ground
-        run: |
-          echo 'Tupo site'
-
       - name: Use the reusable workflow
         uses: ./.github/workflows/custom-action

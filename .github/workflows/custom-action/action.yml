@@ -9,3 +9,4 @@ runs:
     - run: |
         echo This step will fail
         exit 1
+      shell: bash

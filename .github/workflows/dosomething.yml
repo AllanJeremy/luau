@@ -1,6 +1,7 @@
 name: "Do something"
 on:
   push:
+  workflow_call:
 jobs:
   doing-something:
     runs-on: "ubuntu-latest"
@@ -15,5 +16,3 @@ jobs:
 
       - name: Use the reusable workflow
         uses: ./.github/workflows/custom-action
-        with:
-          first_name: "Allan"

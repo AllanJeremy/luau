@@ -16,7 +16,7 @@ jobs:
           max_attempts: 3
           retry_on: error
           timeout_seconds: 5
-          action:
-            - name: ./.github/workflows/custom-action
-            - with:
-                first_name: "Allan Jeremy"
+          action: ./.github/workflows/custom-action
+          with: |
+            first_name: "Allan"
+            last_name: "Jeremy"

@@ -17,3 +17,6 @@ jobs:
           retry_on: error
           timeout_seconds: 5
           action: ./.github/workflows/custom-action
+            with: 
+              first_name: "Allan Jeremy"
+
